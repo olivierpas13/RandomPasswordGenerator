@@ -37,7 +37,7 @@ body{
     margin: 0;
 }
 
-button{
+.generate-password-btn{
     font-family: Inter;
     font-weight: 500;
     color: white;
@@ -46,9 +46,10 @@ button{
     width: 191px;
     height: 42px;
     border-radius: 6px;
-    margin-bottom: 35px;
-    margin-top: 51px;
+    margin-bottom: 30px;
+    margin-top: 45px;
     padding: 9px 17px 9px 15px;
+    cursor: pointer;
 }
 
 hr{
@@ -56,9 +57,59 @@ hr{
 }
 
 .results-container{
-    display: grid;
-    grid-template-columns: 200px 200px;
-    column-gap: 24px;
+    display: flex;
+    /* grid-template-columns: 200px 10px 200px 10px; */
+    margin-left: -20px;
+    column-gap: 10px;
+    /* align-items: center; */
+}
+
+.copy-btn-container{
+  /* align-items: center;
+  justify-content:flex-start; */
+  /* height: 10px; */
+  padding-top: 15px;
+}
+
+.copy-btn{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px 4px 6px;
+  background-color: rgba(213, 212, 216, 1);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 1px rgba(74, 223, 134, 0.4);
+  /* border: 2px solid rgb(85, 249, 145); */
+}
+.copy-btn .tool-tip{
+  position: absolute;
+  background-color: gray;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  padding-left: 9px;
+  padding-right: 9px;
+  font-size: 9px;
+  font-weight: 500;
+  bottom: -25px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+
+}
+
+.copy-btn:hover .tool-tip{
+  opacity: 1;
+}
+
+.copy-icon{
+  width: 10px;
+  align-self: center;
+  justify-self:right;
 }
 
 .first-password, .second-password{
@@ -69,13 +120,14 @@ hr{
     font-style: normal;
     color: rgb(85, 249, 145);
     font-weight: 500;
-    font-size: 16px;
-    width: 180px;
+    font-size: 14px;
+    width: 200px;
     text-align: center;
     padding-bottom: 10px;
+    margin-left: 20px;
 }
 
-.toggle-characters-container{
+.toggle-characters-container, .length-selector-container{
     font-family: 'Inter';
     font-style: normal;
     color: rgba(213, 212, 216, 1);
@@ -88,6 +140,17 @@ hr{
     padding-left: 15px;
     padding-right: 15px;
 
+}
+.length-selector-container{
+  justify-content: start;
+}
+
+.length-selector{
+  margin-left: 10px;
+  background-color: rgb(39, 53, 73);
+  border: none;
+  padding: 2px;
+  color: rgb(74, 223, 134);
 }
 
 .switch {
@@ -132,7 +195,7 @@ hr{
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px rgba(213, 212, 216, 1);
   }
   
   input:checked + .slider:before {

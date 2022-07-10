@@ -19,7 +19,7 @@
       <p class="prompt">Never use an insecure password again.</p>
     </div>
     <div>
-      <button id="generate-password-btn" onclick="assignPassword()">
+      <button class="generate-password-btn" onclick="assignPassword()">
         Generate passwords
       </button>
       <div class="toggle-characters-container">
@@ -44,11 +44,38 @@
           <span class="slider round"></span>
         </label>
       </div>
+      <div class="length-selector-container">
+        <label for="password-length" class="length-selector-prompt"
+          >Password Length</label
+        >
+        <select
+          name="password-length"
+          id="password-length"
+          class="length-selector"
+        >
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
     </div>
     <hr />
     <div id="results" class="results-container">
       <div class="first-password"><p id="password-el-one"></p></div>
+      <div class="copy-btn-container">
+        <button class="copy-btn" onclick="copyOnClick(passwordElOne)">
+          <img src="clipboard-copy-512.webp" class="copy-icon" />
+          <div class="tool-tip">Copy to clipboard</div>
+        </button>
+      </div>
       <div class="second-password"><p id="password-el-two"></p></div>
+      <div class="copy-btn-container">
+        <button class="copy-btn" onclick="copyOnClick(passwordElTwo)">
+          <img src="clipboard-copy-512.webp" class="copy-icon" />
+          <div class="tool-tip">Copy to clipboard</div>
+        </button>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
